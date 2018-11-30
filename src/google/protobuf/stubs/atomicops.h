@@ -171,6 +171,10 @@ Atomic64 Release_Load(volatile const Atomic64* ptr);
 }  // namespace protobuf
 }  // namespace google
 
+// #ifdef __EMSCRIPTEN__
+// #include "atomicops_internals_emscripten_compat.h"
+// #endif
+
 // Include our platform specific implementation.
 #define GOOGLE_PROTOBUF_ATOMICOPS_ERROR \
 "Atomic operations are not supported on your platform"
@@ -238,7 +242,7 @@ Atomic64 Release_Load(volatile const Atomic64* ptr);
 
 // On some platforms we need additional declarations to make AtomicWord
 // compatible with our other Atomic* types.
-#if defined(GOOGLE_PROTOBUF_OS_APPLE)
+#if defined(GOOGLE_PROTOBUF_OS_APPLE) || defined(__EMSCRIPTEN__)
 #include <google/protobuf/stubs/atomicops_internals_atomicword_compat.h>
 #endif
 

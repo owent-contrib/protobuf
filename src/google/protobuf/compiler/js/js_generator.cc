@@ -3369,6 +3369,7 @@ void Generator::GenerateFile(const GeneratorOptions& options,
                    "package", GetFilePath(options, file));
   }
 
+#ifndef __EMSCRIPTEN__
   // Emit well-known type methods.
   for (FileToc* toc = well_known_types_js; toc->name != NULL; toc++) {
     string name = string("google/protobuf/") + toc->name;
@@ -3376,6 +3377,7 @@ void Generator::GenerateFile(const GeneratorOptions& options,
       printer->Print(toc->data);
     }
   }
+#endif
 }
 
 bool Generator::GenerateAll(const std::vector<const FileDescriptor*>& files,

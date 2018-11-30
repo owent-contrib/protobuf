@@ -33,11 +33,15 @@
 
 #include <stddef.h>
 
+#ifndef __EMSCRIPTEN__
+
 struct FileToc {
   const char* name;
   const char* data;
 };
 
 extern struct FileToc well_known_types_js[];
+
+#endif
 
 #endif  // GOOGLE_PROTOBUF_COMPILER_JS_WELL_KNOWN_TYPES_EMBED_H__

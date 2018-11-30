@@ -44,7 +44,7 @@
 // On LP64 platforms, AtomicWord and Atomic64 are both always long,
 // so this problem doesn't occur.
 
-#if !defined(GOOGLE_PROTOBUF_ARCH_64_BIT)
+#if !defined(GOOGLE_PROTOBUF_ARCH_64_BIT) || defined(__EMSCRIPTEN__)
 
 namespace google {
 namespace protobuf {
