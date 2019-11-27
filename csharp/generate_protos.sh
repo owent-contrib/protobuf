@@ -58,6 +58,10 @@ $PROTOC -Isrc -Icsharp/protos \
     csharp/protos/unittest.proto \
     csharp/protos/unittest_import.proto \
     csharp/protos/unittest_import_public.proto \
+    csharp/protos/unittest_import_extension_proto3.proto \
+    csharp/protos/unittest_with_extension_1_proto3.proto \
+    csharp/protos/unittest_with_extension_2_proto3.proto \
+    csharp/protos/unittest_with_extension_3_proto3.proto \
     src/google/protobuf/unittest_well_known_types.proto \
     src/google/protobuf/test_messages_proto3.proto \
     src/google/protobuf/test_messages_proto2.proto

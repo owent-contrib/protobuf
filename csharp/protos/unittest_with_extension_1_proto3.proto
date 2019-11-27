@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "unittest_import_extension_proto3.proto";
+import "unittest_with_extension_2_proto3.proto";
+import "unittest_with_extension_3_proto3.proto";
+
+message TestMessageWithExtension1 {
+    option (unittest_extension) = "TestMessageWithExtension1";
+    
+    string id      = 1;
+    TestMessageWithExtension2 submessage2 = 2;
+    TestMessageWithExtension3 submessage3 = 3;
+}

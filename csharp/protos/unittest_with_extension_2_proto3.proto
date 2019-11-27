@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "unittest_import_extension_proto3.proto";
+
+message TestMessageWithExtension2 {
+    option (unittest_extension) = "TestMessageWithExtension2";
+    
+    string id = 1;
+}
